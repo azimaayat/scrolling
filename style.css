@@ -1,0 +1,74 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Stencil Std, fantasy;
+}
+
+.parallax {
+    /* Full height */
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.forest {
+    background-image: url('media/forest.jpeg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: blur(10px);
+    z-index: 1;
+}
+
+.content {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: 	#F5DEB3;
+    font-size: 36px;
+    text-align: center;
+    background-color: rgba(60, 97, 165, 0.9);
+    z-index: 2;
+}
+
+#deer-section .deer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2; /* the deer image is on top */
+}
+
+#deer-section .text {
+    position: relative;
+    z-index: 3; /* the text is on top of the deer image */
+    background-color: rgba(0, 0, 0, 0.5); /* a semi-transparent background to the text for better readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+}
+
+
+
+
